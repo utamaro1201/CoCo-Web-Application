@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* スライド調整 */
+
+.slick-slide {
+  margin: 0 15px;
+}
+
+
+.slick-list {
+  margin: 0 -15px;
+  padding: 0 !important; 
+}
+
+
+.slick-track {
+  display: flex !important;
+  align-items: center; 
+}
+
+.slick-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none; 
+    transition: none !important; 
+  }
+
+.slick-dots{
+	bottom: -40px!important;
+}
+
+.slick-dots li button:before{
+	font-size:10px!important;
+}

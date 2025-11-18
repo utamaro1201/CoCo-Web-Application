@@ -8,7 +8,7 @@ export const Topping_diagnosis = () => {
     setSelectedTopping,
     diagnosisStep,
     setdiagnosisStep,
-    setRecommendedToppings, // ✅ 追加
+    setRecommendedToppings,
   } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -121,15 +121,15 @@ export const Topping_diagnosis = () => {
       setLocalStep((prev) => prev + 1);
       setdiagnosisStep((prev) => prev + 1);
     } else {
-      // ✅ 結果処理
+      // 結果処理
       const sorted = Object.entries(newScores).sort((a, b) => b[1] - a[1]); // 降順
       const top5 = sorted.slice(0, 5).map(([name]) => name); // 名前だけ上位5件
       const best = top5[0];
 
-      // ✅ menuData から該当データを取得
+      // menuData から該当データを取得
       const chosen = menuData.toppings.find((t) => t.name === best);
       setSelectedTopping([{ ...chosen, count: 1 }]);
-      setRecommendedToppings(top5); // ← 5件まとめて保存
+      setRecommendedToppings(top5); // 5件まとめて保存
       navigate("/diagnosis/result");
     }
   };
@@ -142,7 +142,7 @@ export const Topping_diagnosis = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-kimidori">
-      <img src="/neko/hourensou_animetion.gif"
+      {/*<img src="/neko/hourensou_animetion.gif"
        class="absolute left-[150px] top-[350px] w-[150px]" />
       <img src="/neko/ika_animetion.gif"
        class="absolute right-[220px] top-[85px] w-[150px]" />
@@ -167,6 +167,32 @@ export const Topping_diagnosis = () => {
       <img src="/neko/tamamegi.svg"
        class="absolute left-[120px] top-[200px] w-[70px]" />
       <img src="/neko/tree.svg"
+       class="absolute right-[50px] top-[650px] w-[150px]" />*/ }
+      <img src="/neko/image.png"
+       class="absolute left-[150px] top-[350px] w-[150px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[220px] top-[85px] w-[150px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[100px] top-[500px] w-[250px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[180px] top-[630px] w-[200px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[70px] top-[80px] w-[150px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[50px] top-[470px] w-[90px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[50px] top-[350px] w-[90px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[300px] top-[60px] w-[70px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[70px] top-[50px] w-[80px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[250px] top-[800px] w-[80px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[300px] top-[380px] w-[80px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[120px] top-[200px] w-[70px]" />
+      <img src="/neko/image.png"
        class="absolute right-[50px] top-[650px] w-[150px]" />
       <h1 className="text-5xl font-bold mt-28 mb-14 text-yellow-800">ココイチカレー診断</h1>
       <h1 className="text-4xl font-bold mt-14 mb-32 text-yellow-800">【STEP 2】　 あなたにおすすめのトッピングを診断します</h1>

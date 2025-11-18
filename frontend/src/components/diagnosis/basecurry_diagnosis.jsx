@@ -73,7 +73,7 @@ export const Basecurry_diagnosis = () => {
   const handleAnswer = (answer) => {
     const current = questions[diagnosisStep][answer];
 
-    // ✅ スコア加算
+    // スコア加算
     const newScores = { ...scores };
     for (const key in current) {
       newScores[key] += current[key];
@@ -83,7 +83,7 @@ export const Basecurry_diagnosis = () => {
     if (diagnosisStep < questions.length - 1) {
       setdiagnosisStep((prev) => prev + 1);
     } else {
-      // ✅ スコア最大のカレーを決定
+      // スコア最大のカレーを決定
       const best = Object.entries(newScores).reduce((a, b) =>
         a[1] > b[1] ? a : b
       )[0];
@@ -100,7 +100,7 @@ export const Basecurry_diagnosis = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-kimidori">
-      <img src="/neko/hourensou_animetion.gif"
+      {/*<img src="/neko/hourensou_animetion.gif"
        class="absolute left-[150px] top-[350px] w-[150px]" />
       <img src="/neko/ika_animetion.gif"
        class="absolute right-[220px] top-[85px] w-[150px]" />
@@ -125,6 +125,32 @@ export const Basecurry_diagnosis = () => {
       <img src="/neko/tamamegi.svg"
        class="absolute left-[120px] top-[200px] w-[70px]" />
       <img src="/neko/tree.svg"
+       class="absolute right-[50px] top-[650px] w-[150px]" />*/ }
+      <img src="/neko/image.png"
+       class="absolute left-[150px] top-[350px] w-[150px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[220px] top-[85px] w-[150px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[100px] top-[500px] w-[250px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[180px] top-[630px] w-[200px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[70px] top-[80px] w-[150px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[50px] top-[470px] w-[90px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[50px] top-[350px] w-[90px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[300px] top-[60px] w-[70px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[70px] top-[50px] w-[80px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[250px] top-[800px] w-[80px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[300px] top-[380px] w-[80px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[120px] top-[200px] w-[70px]" />
+      <img src="/neko/image.png"
        class="absolute right-[50px] top-[650px] w-[150px]" />
       <h1 className="text-5xl font-bold mt-28 mb-14 text-yellow-800">ココイチカレー診断</h1>
       <h1 className="text-4xl font-bold mt-14 mb-32 text-yellow-800">【STEP 1】　あなたにおすすめのベースカレーを診断します</h1>

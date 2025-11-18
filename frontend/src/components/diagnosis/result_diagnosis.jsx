@@ -20,7 +20,7 @@ export const Result_diagnosis = () => {
 
   const navigate = useNavigate();
 
-  // ✅ 安全対策：データがまだ設定されていない場合
+  // データがまだ設定されていない場合
   if (!selectedBasecurry || selectedTopping.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-kimidori text-yellow-900">
@@ -41,11 +41,11 @@ export const Result_diagnosis = () => {
     setRecommendedToppings([]);
   };
 
-  // ✅ おすすめトッピング（1位は除外）
+  // おすすめトッピング（1位は除外）
   const recommendedData = recommendedToppings
-    .slice(1) // ← 最初の1件（選ばれたトッピング）を除外
+    .slice(1) // 最初の1件（選ばれたトッピング）を除外
     .map((name) => menuData.toppings.find((t) => t.name === name))
-    .filter(Boolean); // 存在しないものを除外
+    .filter(Boolean); //存在しないものを除外
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,7 +53,7 @@ export const Result_diagnosis = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-kimidori text-center">
-      <img src="/neko/katu_animetion.gif"
+      {/*<img src="/neko/katu_animetion.gif"
        class="absolute left-[180px] top-[570px] w-[150px]" />
       <img src="/neko/cheeze_animetion.gif"
        class="absolute right-[200px] top-[40px] w-[250px]" />
@@ -62,11 +62,22 @@ export const Result_diagnosis = () => {
       <img src="/neko/kusa.svg"
        class="absolute right-[70px] top-[230px] w-[80px]" />
       <img src="/neko/flower.svg"
+       class="absolute left-[180px] top-[200px] w-[90px]" />*/}
+      <img src="/neko/image.png"
+       class="absolute left-[180px] top-[570px] w-[150px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[200px] top-[40px] w-[250px]" />
+      <img src="/neko/image.png"
+       class="absolute left-[70px] top-[50px] w-[80px]" />
+      <img src="/neko/image.png"
+       class="absolute right-[70px] top-[230px] w-[80px]" />
+      <img src="/neko/image.png"
        class="absolute left-[180px] top-[200px] w-[90px]" />
       <h1 className="text-5xl font-bold mt-28 mb-14 text-yellow-800 ">ココイチカレー診断結果</h1>
       <div className="flex justify-center mt-32 ">
       <img
-        src="/neko/katu_result.png"
+        {/*src="/neko/katu_result.png"*/}
+        src="/neko/image.png"
         className="w-[150px] absolute top-[240px] left-1/2 -translate-x-1/2"
       />
         <div className="bg-yellow-100 rounded-3xl shadow-md p-10 w-[1100px] h-auto text-center">

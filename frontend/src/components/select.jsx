@@ -9,8 +9,8 @@ export const Select = () => {
   return (
     /*ホーム画面*/
     <div className="flex flex-col items-center justify-center min-h-screen bg-yellow-50 text-gray-800">
-      <span className="text-5xl font-bold">著作権の関係上、画像は白塗りにしております。</span>
-      <span className="text-5xl font-bold">下までスクロールしていただけますようお願いいたします。</span>
+      <span className="text-5xl font-bold mt-32">著作権の関係上、画像は白塗りにしております。</span>
+      <span className="text-5xl font-bold mb-32">下までスクロールしていただけますようお願いいたします。</span>
       <div className="w-full h-full object-cover">
         <img
           src="/select.png"

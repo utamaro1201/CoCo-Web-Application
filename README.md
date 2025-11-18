@@ -2,13 +2,14 @@
 
 下記のリンクを踏むとココイチカレーアプリケーションを利用することができます。
 
-※著作権の関係上、公開しているアプリケーションにおける画像の表示はしておりません。  
+[https://co-co-web-application.vercel.app](https://co-co-web-application.vercel.app)
+
+※**著作権の関係上、公開しているアプリケーションにおける画像の表示はしておりません。**  
 　面接の際には、著作権に配慮した上で、企業様の素材を用いた画面イメージをローカル環境にて  
 　限定的にご覧いただく形で説明させていただきます。
 
 ※現在はPCでのみ正常に作動します。（今後スマホでの利用が可能な様に修正予定）
 
-[https://co-co-web-application.vercel.app](https://co-co-web-application.vercel.app)
 
 ## 機能紹介
 

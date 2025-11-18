@@ -75,8 +75,8 @@ export const Result_diagnosis = () => {
        class="absolute left-[180px] top-[200px] w-[90px]" />
       <h1 className="text-5xl font-bold mt-28 mb-14 text-yellow-800 ">ココイチカレー診断結果</h1>
       <div className="flex justify-center mt-32 ">
+      {/*src="/neko/katu_result.png"*/}
       <img
-        {/*src="/neko/katu_result.png"*/}
         src="/neko/image.png"
         className="w-[150px] absolute top-[240px] left-1/2 -translate-x-1/2"
       />

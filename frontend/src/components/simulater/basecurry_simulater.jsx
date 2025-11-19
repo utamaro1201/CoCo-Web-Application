@@ -125,14 +125,12 @@ export const Basecurry_simulater = () => {
 useEffect(() => {
   if (!sliderRef.current || selectedIndex < 0) return;
 
-  // 2スライドごとにまとめて動かすなら
+
   const groupIndex = Math.floor(selectedIndex / 2) * 2;
 
-  // 例: index3 -> groupIndex=2（スライダー2枚目の位置へ）
-  //     index5 -> groupIndex=4（スライダー4枚目の位置へ）
+  
   sliderRef.current.slickGoTo(groupIndex);
 
-  // dotも同期（念のため）
   const dots = document.querySelectorAll(".slick-dots li");
   dots.forEach((dot) => dot.classList.remove("slick-active"));
   const activeDotIndex = Math.floor(selectedIndex / 2);
@@ -157,14 +155,14 @@ useEffect(() => {
   useEffect(() => {
     if (!selectedBasecurry) return;
   
-    // ポークカレーのときは何もしない（初期値）
+    // ポークカレーのときは何もしない
     if (selectedBasecurry.name === "ポークカレー") return;
   
     const rice300 = menuData.rice_volume.find((r) => r.name === "300g");
     const spicyNormal = menuData.spicy_level.find((s) => s.name === "普通");
     const spicyMild = menuData.spicy_level.find((s) => s.name === "甘口");
   
-    // 🍜 麺類ならライスをnull・辛さは普通
+    //麺類ならライスをnull・辛さは普通
     if (
       ["カレーうどん", "カレーラーメン", "チャーシューカレーラーメン"].includes(
         selectedBasecurry.name
@@ -175,30 +173,30 @@ useEffect(() => {
       return;
     }
   
-    // 🍬 甘口ポークカレーならライス300g・辛さ甘口
+    //甘口ポークカレーならライス300g・辛さ甘口
     if (selectedBasecurry.name === "甘口ポークカレー") {
       setSelectedRicevol(rice300);
       setSelectedSpicylev(spicyMild);
       return;
     }
   
-    // 🍛 それ以外はライス300g・辛さ普通
+    //それ以外はライス300g・辛さ普通
     setSelectedRicevol(rice300);
     setSelectedSpicylev(spicyNormal);
-  }, []); // ← ここ重要！依存配列を空にして初回だけ実行
+  }, []);
 
-  // 🍜 麺系 → 麺系以外 に変わったとき、ライスを300gに戻す
+  //麺系 → 麺系以外 に変わったとき、ライスを300gに戻す
 useEffect(() => {
   if (!selectedBasecurry) return;
 
   const rice300 = menuData.rice_volume.find((r) => r.name === "300g");
 
-  // 現在が麺系かどうか
+  //麺系かどうか
   const isNoodle = ["カレーうどん", "カレーラーメン", "チャーシューカレーラーメン"].includes(
     selectedBasecurry.name
   );
 
-  // 前回が麺系で、今回は麺系ではない → ライスを300gに戻す
+  // 前回が麺系で、今回は麺系ではない ライスを300gに戻す
   if (Basecurry_simulater.prevIsNoodle && !isNoodle) {
     setSelectedRicevol(rice300);
   }
